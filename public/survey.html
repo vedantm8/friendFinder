@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./homeCSS.css"> -->
+    <title id="title">Survey to Find Friends</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h3 id="surveyTitle">
+                Survey Questions
+            </h3>
+            <a class="btn btn-primary btn-lg" href="./home.html" role="button">Home Page</a>
+            <form>
+                <div class="form-group">
+                    <label for="nameInput">Full Name</label>
+                    <input type="name" class="form-control" id="emterName" aria-describedby="name" placeholder="Enter name">
+                </div>
+
+                <label for="customRange3">1. Your mind is always buzzing with unexplored ideas and plans. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question1" min="1" max="5" step="1">
+
+                <label for="customRange3">2. Generally speaking, you rely more on your experience than your imagination. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question2" min="1" max="5" step="1">
+
+                <label for="customRange3">3. You find it easy to stay relaxed and focused even when there is some pressure. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question3" min="1" max="5" step="1">
+
+                <label for="customRange3">4. You rarely do something just out of sheer curiosity. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question4" min="1" max="5" step="1">
+
+                <label for="customRange3">5. People can rarely upset you. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question5" min="1" max="5" step="1">
+
+                <label for="customRange3">6. It is often difficult for you to relate to other people’s feelings. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question6" min="1" max="5" step="1">
+
+                <label for="customRange3">7. In a discussion, truth should be more important than people’s sensitivities. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question7" min="1" max="5" step="1">
+
+                <label for="customRange3">8. You rarely get carried away by fantasies and ideas. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question8" min="1" max="5" step="1">
+
+                <label for="customRange3">9. You think that everyone’s views should be respected regardless of whether they are supported by facts
+                    or not. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question9" min="1" max="5" step="1">
+
+                <label for="customRange3">10. You feel more energetic after spending time with a group of people. (Left: Never)
+                </label>
+                <input type="range" class="custom-range" id="Question10" min="1" max="5" step="1">
+
+                <!-- <button type="submit" id="submitButton" class="btn btn-primary" data-target='myModal'>Submit</button> -->
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="submitButton">Submit</button>
+
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Some text in the modal.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <script type="text/javascript">
+        $('#submitButton').on('click', function () {
+            event.preventDefault();
+
+            //console.log(parseInt(Question1.value) + parseInt(Question2.value) + parseInt(Question3.value) + parseInt(Question4.value) + parseInt(Question5.value) + parseInt(Question6.value) + parseInt(Question7.value) + parseInt(Question8.value) + parseInt(Question9.value) + parseInt(Question10.value));
+            var totalScore = parseInt(Question1.value) + parseInt(Question2.value) + parseInt(Question3.value) + parseInt(Question4.value) + parseInt(Question5.value) + parseInt(Question6.value) + parseInt(Question7.value) + parseInt(Question8.value) + parseInt(Question9.value) + parseInt(Question10.value);
+
+            //I tried to import the numbers from 
+            var AllenScore = 27;
+            var WayneScore = 33;
+            var KentScore = 42;
+
+            for (var i = 0; i < 50; i++) {
+                totalScore += 1;
+                if (totalScore == AllenScore) {
+                    alert("You new friend is 'Barry Allen'");
+                    return;
+                }
+                else if (totalScore == WayneScore) {
+                    alert("Your new friend is 'Bruce Wayne'");
+                    return;
+                }
+                else if (totalScore == KentScore) {
+                    alert("Your new friend is 'Clark Kent'");
+                    return;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
